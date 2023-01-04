@@ -1,7 +1,20 @@
-class WaterMonster {
+class WaterMonster extends Monster {
 
-    // TODO : add constructor and initialize type to "water"
-    
-    // TODO : create an attack method which deals x2 damage to "fire"
-    
+    public WaterMonster(String name, int damage) {
+        super(name, damage, "water");
+    }
+
+    public boolean attack(Monster opponent) {
+        opponent.setLife(opponent.getLife() - getDamage());
+
+        // si fire, on attaque une 2eme fois
+
+        // if (opponent instanceof FireMonster) {
+        if (opponent.getType().equalsIgnoreCase("fire")) {
+            opponent.setLife(opponent.getLife() - getDamage());
+        }
+
+        return opponent.isKO();
+    }
+
 }

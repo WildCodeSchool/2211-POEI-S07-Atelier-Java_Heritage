@@ -1,7 +1,20 @@
-class FireMonster {
+class FireMonster extends Monster {
 
-    // TODO : add constructor and initialize type to "fire"
+    public FireMonster(String name, int damage) {
+        super(name, damage, "fire");
+    }
 
-    // TODO : create an attack method which deals x2 damage to "air"
-    
+    public boolean attack(Monster opponent) {
+        opponent.setLife(opponent.getLife() - getDamage());
+
+        // si air, on attaque une 2eme fois
+
+        // if (opponent instanceof AirMonster) {
+        if (opponent.getType().equalsIgnoreCase("air")) {
+            opponent.setLife(opponent.getLife() - getDamage());
+        }
+
+        return opponent.isKO();
+    }
+
 }

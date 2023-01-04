@@ -3,13 +3,13 @@ abstract class Monster {
     // DO NOT TOUCH ANYTHING IN THIS CLASS !
 
     private String name;
-    private int attack;
+    private int damage;
     private int life = 40;
     private String type;
 
-    public Monster(String name, int attack, String type) {
+    public Monster(String name, int damage, String type) {
         this.name = name;
-        this.attack = attack;
+        this.damage = damage;
         this.type = type;
     }
 
@@ -21,12 +21,12 @@ abstract class Monster {
         this.name = name;
     }
 
-    public int getAttack() {
-        return this.attack;
+    public int getDamage() {
+        return this.damage;
     }
 
-    public void setAttack(int attack) {
-        this.attack = attack;
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 
     public int getLife() {
